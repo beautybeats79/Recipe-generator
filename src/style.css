@@ -1,7 +1,8 @@
-bbody {
+body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #f2f5f7;
+  background: url("images/kitchen.jpg") no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   min-height: 100vh;
 }
@@ -14,12 +15,17 @@ bbody {
 }
 
 .container {
-  background: #fff;
+  background: rgba(
+    210,
+    245,
+    220,
+    0.95
+  ); /* soft mint green with light transparency */
   max-width: 600px;
   width: 100%;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
