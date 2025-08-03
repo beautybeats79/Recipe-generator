@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: url("images/kitchen.jpg") no-repeat center center fixed;
+  background: url("../image/sunny-kitchen.jpg") no-repeat center center fixed;
   background-size: cover;
   color: #333;
   min-height: 100vh;
@@ -27,8 +27,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
-background: url("images/sunny kitchen.jpg") no-repeat center center fixed;
 
 h1 {
   color: #6a2e8f;

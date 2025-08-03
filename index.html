@@ -10,51 +10,59 @@
     <title>Recipe Generator</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <h1>What's in Your Kitchen?</h1>
-        <p>Enter what you have, and we'll suggest a recipe idea.</p>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <h1>What's in Your Kitchen?</h1>
+          <p>Enter what you have, and we'll suggest a recipe idea.</p>
 
-        <form id="recipe-form">
-          <label>Vegetables</label>
-          <input
-            type="text"
-            id="veggies"
-            placeholder="e.g. 1 zucchini, spinach"
-          />
+          <form id="recipe-form">
+            <label for="veggies">Vegetables</label>
+            <input
+              type="text"
+              id="veggies"
+              placeholder="e.g. 1 zucchini, spinach"
+            />
 
-          <label>Protein</label>
-          <input
-            type="text"
-            id="protein"
-            placeholder="e.g. 200g tofu or chicken"
-          />
+            <label for="protein">Protein</label>
+            <input
+              type="text"
+              id="protein"
+              required
+              placeholder="e.g. 200g beef or chicken"
+            />
 
-          <label>Other Ingredients</label>
-          <input
-            type="text"
-            id="extras"
-            placeholder="e.g. pasta, rice, cheese"
-          />
+            <label for="extras">Other Ingredients</label>
+            <input
+              type="text"
+              id="extras"
+              required
+              placeholder="e.g. pasta, rice, cheese"
+            />
 
-          <label>Dietary Preferences</label>
-          <input type="text" id="diet" placeholder="e.g. vegan, gluten-free" />
+            <label for="diet">Dietary Preferences</label>
+            <input
+              type="text"
+              id="diet"
+              placeholder="e.g. vegan, gluten-free"
+            />
 
-          <label>Ingredients to Avoid</label>
-          <input
-            type="text"
-            id="exclude"
-            placeholder="e.g. no mushrooms, no nuts"
-          />
-          <button type="submit">Get Recipe</button>
-        </form>
+            <label for="exclude">Ingredients to Avoid</label>
+            <input
+              type="text"
+              id="exclude"
+              placeholder="e.g. no mushrooms, no nuts"
+            />
+            <button type="submit">Get Recipe</button>
+          </form>
 
-        <div id="result">
-          <h2>Recipe Idea:</h2>
-          <p id="output">Your recipe will appear here...</p>
+          <div id="result">
+            <h2>Recipe Idea:</h2>
+            <p id="output">Your recipe will appear here...</p>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <footer>
       <p>
