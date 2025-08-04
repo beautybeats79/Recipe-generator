@@ -71,3 +71,9 @@ button:hover {
   border: 1px solid #ddd;
   min-height: 100px;
 }
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 30px;
+}
