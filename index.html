@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Generator</title>
+
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-
-    <title>Recipe Generator</title>
   </head>
+
   <body>
     <main>
       <div class="wrapper">
@@ -40,12 +41,8 @@
               placeholder="e.g. pasta, rice, cheese"
             />
 
-            <label for="diet">Dietary Preferences</label>
-            <input
-              type="text"
-              id="diet"
-              placeholder="e.g. vegan, gluten-free"
-            />
+            <label for="time">Time Available to Cook</label>
+            <input type="text" id="time" placeholder="e.g. 15 minutes" />
 
             <label for="exclude">Ingredients to Avoid</label>
             <input
@@ -53,6 +50,7 @@
               id="exclude"
               placeholder="e.g. no mushrooms, no nuts"
             />
+
             <button type="submit">Get Recipe</button>
           </form>
 
@@ -88,6 +86,6 @@
       </p>
     </footer>
 
-    <script src="src/script.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
