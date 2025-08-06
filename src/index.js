@@ -44,4 +44,4 @@ form.addEventListener("submit", function (event) {
         "Sorry! Couldn't generate a recipe right now. Please try again later.";
       console.error(error);
     });
-});
+}):
