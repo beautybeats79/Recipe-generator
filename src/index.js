@@ -7,7 +7,7 @@ form.addEventListener("submit", function (event) {
   const veggies = document.getElementById("veggies").value;
   const protein = document.getElementById("protein").value;
   const extras = document.getElementById("extras").value;
-  const diet = document.getElementById("diet").value;
+  const time = document.getElementById("time").value;
   const exclude = document.getElementById("exclude").value;
 
   output.innerHTML = "Thinking... 🍳";
@@ -15,14 +15,13 @@ form.addEventListener("submit", function (event) {
   const apiKey = "f0aaa5691cfa79897f985t035b4a46fo";
   const context =
     "You're a friendly AI chef who gives clear and concise recipe suggestions. Keep responses fun, in HTML, and under 100 words.";
-  const prompt = `Give me a recipe using these ingredients: 
+
+  const prompt = `Give me a recipe using these ingredients:
   Vegetables: ${veggies}
   Protein: ${protein}
   Extras: ${extras}
-  Dietary preference: ${diet}
-  Avoid: ${exclude}
-  Time: ${time} mins
-  Servings: ${servings}`;
+  Time available to cook: ${time}
+  Avoid: ${exclude}`;
 
   const url = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
     prompt
