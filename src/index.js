@@ -40,7 +40,7 @@ form.addEventListener("submit", function (event) {
         autoStart: true,
         cursor: "|",
       })
-        .typeString(plainText)
+        .typeString(decoded)
         .start();
     })
     .catch((error) => {
