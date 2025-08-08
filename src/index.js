@@ -31,12 +31,16 @@ form.addEventListener("submit", function (event) {
     .get(url)
     .then((response) => {
       output.innerHTML = "";
+      const parser = new DOMParser();
+      const decoded = parser.parseFromString(response.data.answer, "text/html")
+        .body.textContent;
+
       new Typewriter(output, {
         delay: 25,
         autoStart: true,
         cursor: "|",
       })
-        .typeString(response.data.answer)
+        .typeString(plainText)
         .start();
     })
     .catch((error) => {
