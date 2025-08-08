@@ -35,8 +35,6 @@ form.addEventListener("submit", function (event) {
       let decoded = parser.parseFromString(response.data.answer, "text/html")
         .body.textContent;
 
-      console.log("API response:", response.data.answer);
-
       decoded = decoded
         .replace(/```html\s*/i, "")
         .replace(/```$/, "")
