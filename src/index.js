@@ -32,8 +32,13 @@ form.addEventListener("submit", function (event) {
     .then((response) => {
       output.innerHTML = "";
       const parser = new DOMParser();
-      const decoded = parser.parseFromString(response.data.answer, "text/html")
+      let decoded = parser.parseFromString(response.data.answer, "text/html")
         .body.textContent;
+
+      decoded = decoded
+        .replace(/```html\s*/i, "")
+        .replace(/```$/, "")
+        .trim();
 
       new Typewriter(output, {
         delay: 25,
