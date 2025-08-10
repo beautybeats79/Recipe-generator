@@ -54,9 +54,18 @@
             <button type="submit">Get Recipe</button>
           </form>
 
+          <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>
+              <img src="src/knife.png" alt="Knife" class="loading-knife" />
+              Chopping some ideas...🔪
+            </p>
+          </div>
+
           <div id="result">
             <h2>Recipe Idea:</h2>
             <p id="output">Your recipe will appear here...</p>
+            <button id="save-recipe" class="hidden">Save Recipe</button>
           </div>
         </div>
       </div>
