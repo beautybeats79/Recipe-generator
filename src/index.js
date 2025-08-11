@@ -53,6 +53,15 @@ Keep it short, fun, and under 100 words.
   Time: ${time}
   Avoid: ${exclude}`;
 
+  function fadeIn(element, text) {
+    element.style.opacity = 0;
+    element.innerHTML = text;
+    element.style.transition = "opacity 0.8s ease-in-out";
+    requestAnimationFrame(() => {
+      element.style.opacity = 1;
+    });
+  }
+
   try {
     const url = `https://api.shecodes.io/ai/v1/generate?prompt=${encodeURIComponent(
       prompt
@@ -64,7 +73,23 @@ Keep it short, fun, and under 100 words.
       "text/html"
     ).body.innerHTML;
 
-    output.innerHTML = decoded;
+    decoded = decoded
+      .replace(/^```html\s*/i, "")
+      .replace(/```/g, "")
+      .trim();
+
+    if (decoded.length < 250) {
+      output.textContent = "";
+      new Typewriter(output, {
+        loop: false,
+        delay: 30,
+      })
+        .typeString(decoded)
+        .start();
+    } else {
+      fadeIn(output, decoded);
+    }
+
     saveButton.classList.remove("hidden");
   } catch (error) {
     output.textContent = "Sorry! Couldn't generate a recipe right now.";
