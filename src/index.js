@@ -3,13 +3,6 @@ const output = document.getElementById("output");
 const loading = document.getElementById("loading");
 const saveButton = document.getElementById("save-recipe");
 
-const savedRecipe = localStorage.getItem("savedRecipe");
-if (savedRecipe) {
-  output.innerText = savedRecipe;
-  saveButton.classList.remove("hidden");
-}
-
-// Save recipe button
 saveButton.addEventListener("click", function () {
   const recipeText = output.innerText;
   localStorage.setItem("savedRecipe", recipeText);
