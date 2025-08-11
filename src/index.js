@@ -3,7 +3,6 @@ const output = document.getElementById("output");
 const loading = document.getElementById("loading");
 const saveButton = document.getElementById("save-recipe");
 
-// Load saved recipe immediately
 const savedRecipe = localStorage.getItem("savedRecipe");
 if (savedRecipe) {
   output.innerText = savedRecipe;
@@ -31,8 +30,22 @@ form.addEventListener("submit", async (event) => {
   const exclude = document.getElementById("exclude").value.trim();
 
   const apiKey = "f0aaa5691cfa79897f985t035b4a46fo";
-  const context =
-    "You're a friendly AI chef who gives clear and concise recipe suggestions. Keep responses fun, in HTML, and under 100 words.";
+  const context = `
+You're a friendly AI chef who gives clear and concise recipe suggestions. Always reply in HTML format like this:
+<h3>🍲 Recipe Name: [Name]</h3>
+<h4>🥕 Ingredients:</h4>
+<ul>
+<li>Ingredient 1</li>
+<li>Ingredient 2</li>
+</ul>
+<h4>👩‍🍳 Method:</h4>
+<ol>
+<li>Step 1</li>
+<li>Step 2</li>
+</ol>
+Keep it short, fun, and under 100 words.
+`;
+
   const prompt = `Give me a recipe using:
   Vegetables: ${veggies}
   Protein: ${protein}
@@ -49,14 +62,9 @@ form.addEventListener("submit", async (event) => {
     let decoded = new DOMParser().parseFromString(
       response.data.answer,
       "text/html"
-    ).body.textContent;
+    ).body.innerHTML;
 
-    decoded = decoded
-      .replace(/^```html\s*/i, "")
-      .replace(/```/g, "")
-      .trim();
-
-    output.textContent = decoded;
+    output.innerHTML = decoded;
     saveButton.classList.remove("hidden");
   } catch (error) {
     output.textContent = "Sorry! Couldn't generate a recipe right now.";

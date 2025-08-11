@@ -122,8 +122,21 @@ footer {
   font-weight: bold;
 }
 
-.loading-knife {
-  width: 20px;
+.knife-emoji {
+  display: inline-block;
+  animation: chop 0.6s infinite alternate ease-in-out;
   vertical-align: middle;
-  margin-right: 5px;
+  margin-left: 5px;
+}
+
+@keyframes chop {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
 }
